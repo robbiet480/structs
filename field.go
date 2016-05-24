@@ -92,7 +92,7 @@ func (f *Field) Set(val interface{}, checkKind bool) error {
 // settable (not addressable or not exported).
 func (f *Field) Zero() error {
 	zero := reflect.Zero(f.value.Type()).Interface()
-	return f.Set(zero)
+	return f.Set(zero, true)
 }
 
 // Fields returns a slice of Fields. This is particular handy to get the fields
